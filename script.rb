@@ -6,7 +6,7 @@ if File.exists?("postCurreny.html")
   offreDigitec = File.open("postCurreny.html", "r")
   offreDuJour = offreDigitec
 else
-  File.open("postCurreny.html", "w") {|f| f.write(Nokogiri::HTML(open("https://www.postfinance.ch/fr/particuliers/assistance/outils-calculateurs/calculateur-monnaie.html")).css(".themeDigitec").first);}
+  File.open("postCurreny.html", "w") {|f| f.write(Nokogiri::HTML(open("https://www.postfinance.ch/fr/particuliers/assistance/outils-calculateurs/calculateur-monnaie.html", "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0")).css(".themeDigitec").first);}
   offreDigitec = File.open("postCurreny.html", "r")
   offreDuJour = offreDigitec
   # exemple pour lire le contenu
